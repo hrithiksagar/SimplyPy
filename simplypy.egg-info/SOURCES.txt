@@ -1,0 +1,10 @@
+LICENSE
+README.md
+setup.py
+simplypy/__init__.py
+simplypy/myfunctions.py
+simplypy.egg-info/PKG-INFO
+simplypy.egg-info/SOURCES.txt
+simplypy.egg-info/dependency_links.txt
+simplypy.egg-info/top_level.txt
+tests/test_myfunctions.py

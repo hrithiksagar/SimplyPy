@@ -1,0 +1,8 @@
+# important for creating library
+wheel
+setuptools
+twine
+
+# for testing functions
+pytest==4.4.1
+pytest-runner==4.4
