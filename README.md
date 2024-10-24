@@ -15,3 +15,13 @@ python -c "import sys; print(sys.version)"
 python -c "import pytest; print(pytest.__version__)"
 ```
 After installing pytest, the test_myfunction.py worked. 
+
+
+Now the libray is live in PyPi. 
+Use this code to install it via terminal
+```bash
+pip install simplypy==0.1.0
+```
+
+Project is live at: https://pypi.org/project/simplypy/0.1.0/
+
