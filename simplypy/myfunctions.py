@@ -21,5 +21,5 @@ def haversine(lon1: float, lat1: float, lon2: float, lat2: float) -> float:
     a = sin(dlat/2)**2 + cos(lat1) * cos(lat2) * sin(dlon/2)**2
     c = 2 * asin(sqrt(a))
     r = 6371 # Radius of earth in kilometers
-    return c * r
+    return print("Distance: ",c * r)
 

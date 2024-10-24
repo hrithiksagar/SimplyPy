@@ -1,2 +1,5 @@
 SIMPLYPY_ENV
 
+simplypy.egg-info
+tests/__pycache__
+simplypy/__pycache__
