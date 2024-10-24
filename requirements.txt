@@ -6,3 +6,6 @@ twine
 # for testing functions
 pytest
 pytest-runner
+
+# function reqirments
+pyyaml

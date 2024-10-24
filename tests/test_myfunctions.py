@@ -34,3 +34,22 @@ def test_write_json(tmp_path):
     with open(json_file) as f:
         result = json.load(f)
         assert result == data    
+        
+        
+def test_open_yaml(tmp_path):
+    data = {"name" : "smith", "age": "95"}
+    yaml_file = tmp_path/"sample_open_yaml.yaml"
+    write_yaml(yaml_file, data)
+    
+    result = open_yaml(yaml_file)
+    assert result == data
+    
+    
+def test_write_yaml(tmp_path):
+    data = {"name" : "smith", "age": "95"}
+    yaml_file = tmp_path/"sample_write_yaml.yaml"
+    write_json(yaml_file, data)
+    
+    with open(yaml_file) as f:
+        result = yaml.safe_load(f)
+        assert result == data

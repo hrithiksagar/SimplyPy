@@ -1,5 +1,6 @@
 from math import radians, cos, sin, asin, sqrt
 import json
+import yaml
 
 def haversine(lon1: float, lat1: float, lon2: float, lat2: float) -> float:
     """
@@ -42,3 +43,20 @@ def write_json(file_path: str, data: str):
     with open(file_path, 'w') as f:
         json.dump(data, f, indent=4)
 
+def open_yaml(file_path: str):
+    """
+    Open a YAML file and return its contents.
+    :param file_path: Path to the YAML file.
+    :return: Contents of the YAML file as a Python object.
+    """
+    with open(file_path, 'r')as f:
+        return yaml.safe_load(f)
+    
+def write_yaml(file_path, data):
+    """
+    Write data to a YAML file.
+    :param file_path: Path to the YAML file.
+    :param data: Data to write to the file as a dictionary.
+    """
+    with open(file_path, 'w') as f:
+        yaml.dump(data, f, default_flow_style=False)
