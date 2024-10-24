@@ -1,29 +1,8 @@
 from math import radians, cos, sin, asin, sqrt
 import json
 import yaml
-
-def haversine(lon1: float, lat1: float, lon2: float, lat2: float) -> float:
-    """
-    Calculate the great circle distance between two points on the 
-    earth (specified in decimal degrees), returns the distance in
-    kilometers.
-    All arguments must be of equal length.
-    :param lon1: longitude of first place
-    :param lat1: latitude of first place
-    :param lon2: longitude of second place
-    :param lat2: latitude of second place
-    :return: distance in kilometers between the two sets of coordinates
-    """
-    # Convert decimal degrees to radians
-    lon1, lat1, lon2, lat2 = map(radians, [lon1, lat1, lon2, lat2])
-
-    # Haversine formula
-    dlon = lon2 - lon1
-    dlat = lat2 - lat1
-    a = sin(dlat/2)**2 + cos(lat1) * cos(lat2) * sin(dlon/2)**2
-    c = 2 * asin(sqrt(a))
-    r = 6371 # Radius of earth in kilometers
-    return print("Distance: ",c * r)
+import csv
+# JSON
 
 def open_json(file_path: str):
     """
@@ -43,6 +22,9 @@ def write_json(file_path: str, data: str):
     with open(file_path, 'w') as f:
         json.dump(data, f, indent=4)
 
+
+# YAML 
+
 def open_yaml(file_path: str):
     """
     Open a YAML file and return its contents.
@@ -60,3 +42,25 @@ def write_yaml(file_path, data):
     """
     with open(file_path, 'w') as f:
         yaml.dump(data, f, default_flow_style=False)
+                
+# CSV
+
+
+def read_csv(file_path: str):
+    with open(file_path, mode = 'r', newline='') as file:
+        reader = csv.reader(file)
+        return [row for row in reader]
+    
+ 
+def write_csv(file_path: str, data: list):
+    with open(file_path, mode='w', newline='') as file:
+        writer = csv.writer(file)
+        writer.writerows(data)
+           
+import pandas as pd
+
+def read_csv_pandas(file_path: str):
+    return pd.read_csv(file_path)
+
+def write_csv_pandas(dataframe: pd.DataFrame, file_path: str):
+    dataframe.to_csv(file_path, index=False)
