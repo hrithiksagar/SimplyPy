@@ -1,4 +1,5 @@
 from math import radians, cos, sin, asin, sqrt
+import json
 
 def haversine(lon1: float, lat1: float, lon2: float, lat2: float) -> float:
     """
@@ -22,4 +23,22 @@ def haversine(lon1: float, lat1: float, lon2: float, lat2: float) -> float:
     c = 2 * asin(sqrt(a))
     r = 6371 # Radius of earth in kilometers
     return print("Distance: ",c * r)
+
+def open_json(file_path: str):
+    """
+    Open a JSON file and return its content
+    :param file_path: path to the JSON file
+    :return: contents of te JSON file
+    """
+    with open(file_path, "r") as f:
+        return json.load(f)
+    
+def write_json(file_path: str, data: str):
+    """
+    Write data to a JSON file
+    :param file_path: Path to the file
+    :param data: Data to write to the JSON file as a dictionary 
+    """
+    with open(file_path, 'w') as f:
+        json.dump(data, f, indent=4)
 

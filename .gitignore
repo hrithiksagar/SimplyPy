@@ -3,3 +3,5 @@ SIMPLYPY_ENV
 simplypy.egg-info
 tests/__pycache__
 simplypy/__pycache__
+tests/tempCodeRunnerFile.py
+.pytest_cache
